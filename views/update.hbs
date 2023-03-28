@@ -1,0 +1,32 @@
+<div class="container w-50 p-5 my-5 shadow">
+
+
+    {{!-- Form --}}
+    <form action="/labs/update/{{lab._id}}" method="post">
+        {{!-- Button --}}
+        <div class="row mb-3">
+            <a class="btn btn-dark col-auto me-auto" href="/labs/list/{{page}}"><i class="fa-solid fa-arrow-left"></i>
+                Back</a>
+            <code class="mx-auto col-auto">{{notify}}</code>
+            <button type="submit" class="btn btn-primary col-auto ms-auto">Update Lab</button>
+        </div>
+
+        {{!-- Input --}}
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input name="title" type="text" class="form-control" value="{{lab.title}}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" type="text" class="form-control" rows="3" required>{{lab.content}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Docs</label>
+            <input name="docs" type="number" class="form-control" min="0" value="{{lab.docs}}">
+            <div class="form-text text-end">Option</div>
+        </div>
+
+    </form>
+
+
+</div>

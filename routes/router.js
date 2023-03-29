@@ -23,6 +23,12 @@ router.get("/list/:page", async (req, res, next) => {
     }
     //  get present page
     page = parseInt(req.params.page);
+    if (pageCount == 0) {
+      return res.render("home", {
+        pageTitle: `Empty`,
+        isSearch: true,
+      }); 
+    }
     if (page > pageCount) {
       page = pageCount;
     }
